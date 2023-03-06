@@ -1,38 +1,44 @@
+// File: app.js
+// Author: Tóth Fedor László
+// Copyright: 2023, Tóth Fedor László
+// Group: Szoft I-2-E
+// Date: 2023.03.06
+// Github: https://github.com/TothFL/
+// Licenc: GNU GPL
+
 const torzs = document.querySelector("#tablazatTorzs");
 
 var empList = [
-    {id: 1, name: "Per Lajos", city: "Szeged", salary: 345},
-    {id: 2, name: "Para Béla", city: "Szeged", salary: 345},
-    {id: 3, name: "Erős Imre", city: "Szolnok", salary: 325},
-    {id: 4, name: "Tér Emese", city: "Szeged", salary: 385},
-    {id: 5, name: "Ken Irén", city: "Miskolc", salary: 375},
-    {id: 6, name: "Csoma ferenc", city: "Szeged", salary: 395}
+    {name: "Cassis", wheel: 28, use: "offroad", price: 557900},
+    {name: "Alboin 900", wheel: 28, use: "Szetrekkingged", price: 519900},
+    {name: "Asgard", wheel: 29, use: "technikás utak", price: 519900},
+    {name: "Ruga", wheel: 29, use: "hegyi", price: 372900},
+    {name: "Reptila", wheel: 28, use: "városi", price: 308900},
+    {name: "Sirmium", wheel: 29, use: "hegyi", price: 264900}
 ];
-
-//----------------------------- Egybe 
 
 function tablazatKeszites(){
     empList.forEach((emp)=>{
-        console.log(emp.name)
+        console.log(emp.wheel)
 
         let sor = document.createElement("tr");
 
-        let adatId = document.createElement("td");
-        let adatName = document.createElement("td");
-        let adatCity = document.createElement("td");
-        let adatSalary = document.createElement("td");  
+        let adatname = document.createElement("td");
+        let adatwheel = document.createElement("td");
+        let adatuse = document.createElement("td");
+        let adatprice = document.createElement("td");  
         
-        adatId.textContent=emp.id;
-        adatName.textContent=emp.name;
-        adatCity.textContent=emp.city;
-        adatSalary.textContent=emp.salary;
+        adatname.textContent=emp.name;
+        adatwheel.textContent=emp.wheel;
+        adatuse.textContent=emp.use;
+        adatprice.textContent=emp.price;
 
         torzs.append(sor);
 
-        sor.append(adatId);
-        sor.append(adatName);
-        sor.append(adatCity);
-        sor.append(adatSalary);
+        sor.append(adatname);
+        sor.append(adatwheel);
+        sor.append(adatuse);
+        sor.append(adatprice);
 
     });
 };
